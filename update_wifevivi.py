@@ -55,7 +55,7 @@ def load_data():
     return {
         "last_updated": datetime.now().strftime("%Y-%m-%d %H:%M"),
         "account": INSTAGRAM_USER,
-        "account_name": "李彩雞滴",
+        "account_name": "wifevivi_",
         "total_posts_analyzed": 0,
         "posts": [],
         "investment_themes": {},

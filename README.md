@@ -1,4 +1,4 @@
-# 李彩雞滴 (wifevivi_) Instagram 投資分析網站
+# wifevivi_ Instagram 投資分析網站
 
 📊 **網站網址**: https://ycc702-spec.github.io/wifevivi-analysis/
 

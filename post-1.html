@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix 收購華納兄弟案分析 | wifevivi_ 投資分析</title>
+    <style>
+        :root {
+            --primary-900: #0f172a;
+            --primary-800: #1e293b;
+            --primary-700: #334155;
+            --primary-600: #475569;
+            --primary-500: #64748b;
+            --primary-400: #94a3b8;
+            --primary-300: #cbd5e1;
+            --primary-200: #e2e8f0;
+            --primary-100: #f1f5f9;
+            --primary-50: #f8fafc;
+            --accent-600: #db2777;
+            --accent-500: #ec4899;
+            --accent-400: #f472b6;
+            --accent-100: #fce7f3;
+            --accent-50: #fdf2f8;
+            --success-600: #059669;
+            --success-100: #d1fae5;
+            --danger-600: #dc2626;
+            --danger-100: #fee2e2;
+            --warning-600: #d97706;
+            --warning-100: #fef3c7;
+            --info-600: #2563eb;
+            --info-100: #dbeafe;
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8fafc;
+            --bg-tertiary: #f1f5f9;
+            --bg-card: #ffffff;
+            --bg-gradient-start: #fdf2f8;
+            --bg-gradient-end: #fce7f3;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-tertiary: #64748b;
+            --text-muted: #94a3b8;
+            --border-light: #e2e8f0;
+            --border-medium: #cbd5e1;
+            --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+            --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+            --shadow-pink: 0 4px 14px 0 rgba(219, 39, 119, 0.25);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang TC', 'Microsoft JhengHei', sans-serif;
+            background: linear-gradient(180deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+            background-attachment: fixed;
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+            font-size: 16px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        /* Navigation */
+        .nav {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+            padding: 12px 0;
+        }
+
+        .nav a {
+            color: var(--accent-600);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .nav a:hover {
+            text-decoration: underline;
+        }
+
+        .nav-separator {
+            color: var(--text-muted);
+        }
+
+        /* Header */
+        .video-header {
+            background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-800) 50%, var(--primary-700) 100%);
+            border-radius: 24px;
+            padding: 40px 32px;
+            margin-bottom: 32px;
+            box-shadow: var(--shadow-xl);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .video-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(236, 72, 153, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .video-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #ffffff 0%, var(--accent-400) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+            position: relative;
+        }
+
+        .video-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            color: var(--primary-300);
+            font-size: 0.95rem;
+            position: relative;
+        }
+
+        .video-meta span {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .tag {
+            background: rgba(236, 72, 153, 0.2);
+            color: var(--accent-400);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        /* Cards */
+        .card {
+            background: var(--bg-card);
+            border-radius: 20px;
+            padding: 32px;
+            margin-bottom: 24px;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-md);
+        }
+
+        .card h2 {
+            color: var(--primary-900);
+            font-size: 1.35rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--border-light);
+        }
+
+        .card h2::before {
+            content: '';
+            width: 4px;
+            height: 24px;
+            background: linear-gradient(180deg, var(--accent-500), var(--accent-400));
+            border-radius: 2px;
+        }
+
+        .card h3 {
+            color: var(--primary-800);
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 24px 0 12px 0;
+            padding-left: 12px;
+            border-left: 3px solid var(--accent-500);
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .card ul {
+            margin-left: 20px;
+            color: var(--text-secondary);
+        }
+
+        .card li {
+            margin-bottom: 8px;
+        }
+
+        /* Key Points */
+        .key-point {
+            background: linear-gradient(135deg, var(--accent-50) 0%, var(--bg-secondary) 100%);
+            border-radius: 12px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            border-left: 4px solid var(--accent-500);
+        }
+
+        .key-point:last-child {
+            margin-bottom: 0;
+        }
+
+        .key-point p {
+            margin: 0;
+            color: var(--text-secondary);
+        }
+
+        /* Quote */
+        blockquote {
+            background: linear-gradient(135deg, var(--bg-secondary) 0%, var(--bg-tertiary) 100%);
+            border-left: 4px solid var(--accent-500);
+            padding: 20px 24px;
+            margin: 20px 0;
+            border-radius: 0 12px 12px 0;
+            color: var(--text-secondary);
+            font-style: italic;
+            font-size: 1.05rem;
+        }
+
+        /* Stock Info */
+        .stock-card {
+            background: linear-gradient(135deg, var(--success-100) 0%, var(--bg-secondary) 100%);
+            border-radius: 16px;
+            padding: 24px;
+            margin: 20px 0;
+            border: 2px solid var(--success-600);
+        }
+
+        .stock-card h4 {
+            color: var(--success-600);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .stock-detail {
+            display: grid;
+            gap: 12px;
+        }
+
+        .stock-detail p {
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .stock-detail strong {
+            color: var(--text-primary);
+        }
+
+        .ticker {
+            display: inline-block;
+            background: var(--success-600);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        /* Technique Card */
+        .technique-card {
+            background: linear-gradient(135deg, var(--accent-50) 0%, var(--bg-secondary) 100%);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            border: 1px solid var(--accent-100);
+        }
+
+        .technique-card h4 {
+            color: var(--accent-600);
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .technique-card p {
+            color: var(--text-secondary);
+            margin-bottom: 8px;
+        }
+
+        .priority-high {
+            color: var(--danger-600);
+            font-weight: 700;
+            background: var(--danger-100);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+
+        .priority-medium {
+            color: var(--warning-600);
+            font-weight: 600;
+            background: var(--warning-100);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            display: inline-block;
+        }
+
+        /* Insight Box */
+        .insight-box {
+            background: linear-gradient(135deg, var(--accent-50) 0%, var(--bg-secondary) 100%);
+            border-left: 4px solid var(--accent-500);
+            padding: 20px 24px;
+            border-radius: 0 12px 12px 0;
+            margin: 16px 0;
+        }
+
+        .insight-box p {
+            margin: 0 0 8px 0;
+            color: var(--text-secondary);
+        }
+
+        .insight-box p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .footer-nav a {
+            color: var(--accent-600);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .video-title {
+                font-size: 1.35rem;
+            }
+
+            .card {
+                padding: 24px;
+            }
+
+            .container {
+                padding: 16px;
+            }
+
+            .video-header {
+                padding: 28px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation -->
+        <nav class="nav">
+            <a href="index.html">← 返回總覽</a>
+            <span class="nav-separator">/</span>
+            <span style="color: var(--text-muted);">貼文分析 #1</span>
+        </nav>
+
+        <!-- Video Header -->
+        <div class="video-header">
+            <h1 class="video-title">Netflix 收購華納兄弟案分析</h1>
+            <div class="video-meta">
+                <span>📅 2024年12月</span>
+                <span>📷 Instagram Reel</span>
+                <span class="tag">投資策略</span>
+                <span class="tag">個股分析</span>
+                <span class="tag">事件驅動</span>
+            </div>
+        </div>
+
+        <!-- Summary -->
+        <div class="card">
+            <h2>📝 內容摘要</h2>
+            <p>分析 Netflix 放棄收購華納兄弟的投資決策，討論不確定性移除對股價的影響，以及個人交易策略。作者分享在 95 塊左右買入 Netflix，並在消息確認後加倉至 60-70% 倉位。</p>
+            
+            <blockquote>
+                「不確定性是投資最大的敵人，不確定性移除往往是最佳買入時機。」
+            </blockquote>
+        </div>
+
+        <!-- Key Points -->
+        <div class="card">
+            <h2>🔑 核心觀點</h2>
+
+            <div class="key-point">
+                <p><strong>1. 收購案告吹</strong> — Netflix 宣布不會收購華納兄弟，收購案正式告吹，需支付 2.8 億美元分手費（約 80 億台幣）</p>
+            </div>
+
+            <div class="key-point">
+                <p><strong>2. 不確定性移除</strong> — 高槓桿感的財務風險消除，投資人情緒反轉，靴子落地可以放心了</p>
+            </div>
+
+            <div class="key-point">
+                <p><strong>3. 分批建倉策略</strong> — 去年 12 月在 95 塊左右買入，看到 Perplexity 加價搶案後，在 85 塊加倉至 60-70% 倉位</p>
+            </div>
+
+            <div class="key-point">
+                <p><strong>4. 本益比分析</strong> — 本益比從 36 倍跌至 24-27 倍，離歷史平均還有好一段距離，股價回到 100 塊是短期很容易達成的目標</p>
+            </div>
+
+            <div class="key-point">
+                <p><strong>5. 基本面強勁</strong> — 強大內容製作能力、AI 隱瞬推薦法、強大現金流支撐新業務投資、抗經濟衰退特性、廣告業務快速成長</p>
+            </div>
+        </div>
+
+        <!-- Stock Analysis -->
+        <div class="card">
+            <h2>💰 股票分析：Netflix (NFLX)</h2>
+
+            <div class="stock-card">
+                <h4>📈 投資建議</h4>
+                <div class="stock-detail">
+                    <p><strong>操作：</strong> <span class="ticker">買入</span></p>
+                    <p><strong>買入區間：</strong> $85-100 美元</p>
+                    <p><strong>目標價：</strong> $100+ 美元（短期）</p>
+                    <p><strong>本益比：</strong> 目前 27 倍 vs 歷史平均 36 倍</p>
+                </div>
+            </div>
+
+            <h3>買入理由</h3>
+            <ul>
+                <li><strong>不確定性移除：</strong>收購案告吹反而消除了高槓桿財務風險</li>
+                <li><strong>估值吸引：</strong>本益比處於歷史低點，有回歸空間</li>
+                <li><strong>基本面強勁：</strong>內容製作能力、AI 推薦、現金流均優秀</li>
+                <li><strong>抗衰退特性：</strong>經濟不好時人們只能在家看 Netflix</li>
+                <li><strong>新成長動能：</strong>廣告業務正在快速成長</li>
+            </ul>
+
+            <div class="insight-box">
+                <p><strong>作者觀點：</strong></p>
+                <p>「管理層還是挺理性的，雖然有 HBO 這些騙單加入 Netflix 平台也是好事，但是如果你買的價格太高，反正手裡就不是這麼的吸引人不合理。」</p>
+                <p style="margin-top: 12px;">「這個收購案是 Nice to have 而非 must have，所以我們開心 Netflix 沒有繼續追高。」</p>
+            </div>
+        </div>
+
+        <!-- Techniques -->
+        <div class="card">
+            <h2>💡 可學習的投資技巧</h2>
+
+            <div class="technique-card">
+                <h4>🎯 不確定性移除投資法 <span class="priority-high">高優先級</span></h4>
+                <p>當併購或其他重大事件的不確定性消除後，股價往往會出現明確方向。利用這個時機進行投資決策，可以降低風險並提高勝率。</p>
+                <p><strong>本案例應用：</strong>收購案告吹消息確認後，不確定性消除，股價反而上漲</p>
+            </div>
+
+            <div class="technique-card">
+                <h4>📊 分批建倉策略 <span class="priority-high">高優先級</span></h4>
+                <p>不一次性全倉買入，而是根據事件發展和市場反應分批建立倉位。這樣可以降低擇時風險，讓投資者有更多時間觀察和確認。</p>
+                <p><strong>本案例應用：</strong>先在 95 塊買入部分，看到反彈跡象後在 85 塊加倉至 60-70%</p>
+            </div>
+
+            <div class="technique-card">
+                <h4>📈 本益比區間分析 <span class="priority-medium">中優先級</span></h4>
+                <p>比較當前本益比與歷史平均水平，判斷股票是否被低估或高估。當優質股票因短期事件導致估值低於歷史平均時，可能是買入機會。</p>
+                <p><strong>本案例應用：</strong>Netflix 本益比從 36 倍跌至 27 倍，低於歷史平均，有回歸空間</p>
+            </div>
+
+            <div class="technique-card">
+                <h4>🛡️ 抗衰退產業識別 <span class="priority-medium">中優先級</span></h4>
+                <p>識別在經濟衰退期間需求不減反增的產業。這些產業在經濟不確定時期提供防禦性配置選擇。</p>
+                <p><strong>本案例應用：</strong>Netflix 被描述為「經濟不好時人們只能在家看 Netflix」</p>
+            </div>
+        </div>
+
+        <!-- Investment Themes -->
+        <div class="card">
+            <h2>📊 相關投資主題</h2>
+
+            <h3>🎬 串流媒體產業</h3>
+            <ul>
+                <li>內容製作能力是核心競爭力</li>
+                <li>AI 推薦技術提升用戶黏著度</li>
+                <li>廣告業務是新的成長動能</li>
+                <li>經濟衰退期間需求相對穩定</li>
+            </ul>
+
+            <h3>🤖 AI 技術應用</h3>
+            <ul>
+                <li>AI 推薦算法是串流平台的護城河</li>
+                <li>個人化推薦提升觀看時長和留存率</li>
+                <li>AI 輔助內容製作和決策</li>
+            </ul>
+
+            <h3>🛡️ 抗衰退特性</h3>
+            <ul>
+                <li>經濟不好時，人們減少外出娛樂，增加在家觀看串流內容</li>
+                <li>相對低價的娛樂選擇，替代高價的外出消費</li>
+                <li>訂閱制提供穩定現金流</li>
+            </ul>
+        </div>
+
+        <!-- Key Takeaways -->
+        <div class="card">
+            <h2>🎯 核心學習要點</h2>
+
+            <ol style="margin-left: 20px; color: var(--text-secondary);">
+                <li style="margin-bottom: 16px;">
+                    <strong>不確定性移除往往是買入機會</strong> — 當市場擔憂的事件塵埃落定，不確定性消除後，股價往往會出現明確方向。這時候反而是進場的好時機。
+                </li>
+                <li style="margin-bottom: 16px;">
+                    <strong>分批建倉降低風險</strong> — 不要一次性全倉買入，而是根據事件發展和市場反應分批建立倉位。這樣可以降低擇時風險，讓你有更多時間觀察和確認。
+                </li>
+                <li style="margin-bottom: 16px;">
+                    <strong>估值要結合歷史水平</strong> — 本益比等估值指標不能只看絕對值，要與歷史平均水平和產業特性結合分析。當優質股票因短期事件導致估值低於歷史平均時，可能是買入機會。
+                </li>
+                <li style="margin-bottom: 16px;">
+                    <strong>Nice to have 的併購案告吹不一定是壞事</strong> — 如果併購案只是「錦上添花」而非「必需」，那麼告吹反而可能讓股價回歸合理價值，避免過高估值。
+                </li>
+                <li>
+                    <strong>關注抗衰退產業</strong> — 在經濟不確定時期，配置一些抗衰退的產業（如串流媒體、必需消費品）可以提供投資組合的防禦性。
+                </li>
+            </ol>
+        </div>
+
+        <!-- Footer Navigation -->
+        <div class="footer-nav">
+            <a href="index.html">← 返回總覽</a>
+            <span style="color: var(--text-muted);">1 / 1</span>
+        </div>
+    </div>
+</body>
+</html>

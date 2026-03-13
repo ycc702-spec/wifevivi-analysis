@@ -1,5 +1,5 @@
 {
-  "last_updated": "2026-03-12 08:00",
+  "last_updated": "2026-03-13 08:00",
   "account": "wifevivi_",
   "account_name": "wifevivi_",
   "total_posts_analyzed": 1,
@@ -87,7 +87,9 @@
   "investment_themes": {
     "串流媒體與內容": {
       "description": "分析串流媒體平台的競爭優勢、內容製作能力和商業模式",
-      "key_stocks": ["NFLX"],
+      "key_stocks": [
+        "NFLX"
+      ],
       "insights": [
         "內容製作能力是核心競爭力",
         "AI 推薦技術提升用戶黏著度",
@@ -100,17 +102,23 @@
     {
       "name": "事件驅動投資",
       "description": "利用重大企業事件（併購、分拆、訴訟）創造的投資機會",
-      "examples": ["Netflix 收購案告吹後買入"]
+      "examples": [
+        "Netflix 收購案告吹後買入"
+      ]
     },
     {
       "name": "分批建倉",
       "description": "根據事件進展分批建立倉位，降低擇時風險",
-      "examples": ["先買入 30%，確認趨勢後再加倉至 60-70%"]
+      "examples": [
+        "先買入 30%，確認趨勢後再加倉至 60-70%"
+      ]
     },
     {
       "name": "估值回歸交易",
       "description": "當優質股票因短期事件導致估值低於歷史平均時買入",
-      "examples": ["Netflix 本益比從 36 倍跌至 24 倍時買入"]
+      "examples": [
+        "Netflix 本益比從 36 倍跌至 24 倍時買入"
+      ]
     }
   ],
   "key_insights": [

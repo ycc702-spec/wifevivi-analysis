@@ -14,3 +14,30 @@
 [36m[apify.instagram-profile-scraper runId:xiB2tqhbtl20flgH0][0m -> 2026-03-13T00:00:15.632Z [32mINFO[39m [33m CheerioCrawler:[39m Finished! Total 1 requests: 1 succeeded, 0 failed.[90m {"terminal":true}[39m
 [36m[apify.instagram-profile-scraper runId:xiB2tqhbtl20flgH0][0m -> 2026-03-13T00:00:15.633Z [32mINFO[39m  [Status message]: Scraper finished
 [36m[apify.instagram-profile-scraper runId:xiB2tqhbtl20flgH0][0m -> Status: SUCCEEDED, Message: Finished! Total 1 requests: 1 succeeded, 0 failed.
+[2026-03-13 08:00:01] ==================================================
+[2026-03-13 08:00:01] 開始 wifevivi_ 自動更新流程
+[2026-03-13 08:00:01] ==================================================
+[2026-03-13 08:00:01] 已載入資料，目前分析 1 篇貼文
+[2026-03-13 08:00:01] 使用 Apify 檢查 wifevivi_ 的新貼文...
+[2026-03-13 08:00:22] 找到 1 篇新貼文
+[2026-03-13 08:00:22] 發現 1 篇新貼文，開始處理...
+[2026-03-13 08:00:22] 部署到 GitHub Pages...
+[2026-03-13 08:00:23] ✅ 部署成功
+[2026-03-13 08:00:23] ==================================================
+[2026-03-13 08:00:23] 更新流程完成
+[2026-03-13 08:00:23] ==================================================
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> Status: RUNNING, Message: 
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> 2026-03-14T00:00:02.681Z ACTOR: Pulling container image of build Gkn0EdD6ieHL4JDPP from registry.
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> 2026-03-14T00:00:02.684Z ACTOR: Creating container.
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> 2026-03-14T00:00:02.875Z ACTOR: Starting container.
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> 2026-03-14T00:00:02.876Z ACTOR: Running under "LIMITED_PERMISSIONS" permission level.
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> 2026-03-14T00:00:03.694Z [32mINFO[39m  System info[90m {"apifyVersion":"3.6.0","apifyClientVersion":"2.22.2","crawleeVersion":"3.16.0","osType":"Linux","nodeVersion":"v22.22.0"}[39m
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> 2026-03-14T00:00:03.891Z [32mINFO[39m  Results Limit [object Object], ACTOR_MAX_PAID_DATASET_ITEMS
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> 2026-03-14T00:00:03.898Z [32mINFO[39m  [Status message]: Starting the scraper with 1 direct URL(s)
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> Status: RUNNING, Message: Starting the crawler.
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> 2026-03-14T00:00:04.044Z [32mINFO[39m [33m CheerioCrawler:[39m Starting the crawler.
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> 2026-03-14T00:00:07.055Z [32mINFO[39m [33m CheerioCrawler:[39m All requests from the queue have been processed, the crawler will shut down.
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> 2026-03-14T00:00:07.233Z [32mINFO[39m [33m CheerioCrawler:[39m Final request statistics:[90m {"requestsFinished":1,"requestsFailed":0,"retryHistogram":[1],"requestAvgFailedDurationMillis":null,"requestAvgFinishedDurationMillis":3002,"requestsFinishedPerMinute":18,"requestsFailedPerMinute":0,"requestTotalDurationMillis":3002,"requestsTotal":1,"crawlerRuntimeMillis":3318}[39m
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> 2026-03-14T00:00:07.234Z [32mINFO[39m [33m CheerioCrawler:[39m Finished! Total 1 requests: 1 succeeded, 0 failed.[90m {"terminal":true}[39m
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> 2026-03-14T00:00:07.236Z [32mINFO[39m  [Status message]: Scraper finished
+[36m[apify.instagram-profile-scraper runId:GfaOiVvdUv0t8XI6C][0m -> Status: RUNNING, Message: Finished! Total 1 requests: 1 succeeded, 0 failed.
